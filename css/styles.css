@@ -50,7 +50,7 @@ body { font-family: 'Inter', system-ui, sans-serif; background: #ffffff; color: 
 .pill-badge { background: #eff6ff; color: #2563eb; border: 1px solid #bfdbfe; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; }
 
 /* Pricing popular plan */
-.plan-popular { background: linear-gradient(160deg, #2563eb 0%, #4338ca 100%) !important; border-color: transparent !important; }
+.plan-popular { background: #ffffff !important; border: 2px solid #2563eb !important; box-shadow: 0 0 0 4px rgba(37,99,235,0.08), 0 8px 30px rgba(37,99,235,0.12) !important; }
 
 /* Shine effect on portfolio cards */
 .shine { position: relative; overflow: hidden; }
