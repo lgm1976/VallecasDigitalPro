@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vallecas Digital Pro — Agencia Digital en Madrid</title>
+  <meta name="description" content="Agencia digital local en Vallecas, Madrid. Webs profesionales, SEO local, Google My Business y publicidad online para negocios del barrio." />
+
+  <!-- Inter font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            blue: {
+              50:  '#eff6ff',
+              100: '#dbeafe',
+              200: '#bfdbfe',
+              300: '#93c5fd',
+              400: '#60a5fa',
+              500: '#3b82f6',
+              600: '#2563eb',
+              700: '#1d4ed8',
+              800: '#1e40af',
+              900: '#1e3a8a',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body class="antialiased">
+
+<!-- Scroll progress bar -->
+<div id="scroll-progress"></div>
+
+<!-- ===================== NAVBAR ===================== -->
+<header id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-white/80">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+
+      <!-- Logo -->
+      <a href="#" class="flex items-center gap-2.5 flex-shrink-0">
+        <div class="w-8 h-8 rounded-lg btn-primary flex items-center justify-center">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+            <path d="M3 13L7 8L10 11L13 7L15 9" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <span class="font-bold text-sm tracking-tight text-slate-900">Vallecas<span class="text-blue-600">Digital</span></span>
+      </a>
+
+      <!-- Desktop nav -->
+      <nav class="hidden md:flex items-center gap-7">
+        <a href="#servicios" class="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors">Servicios</a>
+        <a href="#portfolio" class="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors">Portfolio</a>
+        <a href="#precios" class="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors">Precios</a>
+        <a href="#confianza" class="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors">Clientes</a>
+        <a href="#contacto" class="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors">Contacto</a>
+      </nav>
+
+      <!-- CTA + hamburger -->
+      <div class="flex items-center gap-3">
+        <a href="#contacto" class="hidden md:inline-flex btn-primary items-center px-4 py-2 rounded-xl text-sm font-semibold">
+          Consulta gratis
+        </a>
+        <button id="hamburger-btn" class="md:hidden p-2 rounded-lg text-slate-600 hover:bg-slate-100 transition-colors" aria-label="Menu">
+          <svg width="22" height="22" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <g id="hamburger-icon">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+            </g>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="md:hidden border-t border-slate-100">
+      <div class="py-3 flex flex-col gap-1">
+        <a href="#servicios" onclick="closeMobileMenu()" class="px-3 py-2.5 text-sm font-medium text-slate-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors">Servicios</a>
+        <a href="#portfolio" onclick="closeMobileMenu()" class="px-3 py-2.5 text-sm font-medium text-slate-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors">Portfolio</a>
+        <a href="#precios"   onclick="closeMobileMenu()" class="px-3 py-2.5 text-sm font-medium text-slate-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors">Precios</a>
+        <a href="#confianza" onclick="closeMobileMenu()" class="px-3 py-2.5 text-sm font-medium text-slate-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors">Clientes</a>
+        <a href="#contacto"  onclick="closeMobileMenu()" class="px-3 py-2.5 text-sm font-medium text-slate-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors">Contacto</a>
+        <a href="#contacto"  onclick="closeMobileMenu()" class="mt-2 mx-3 btn-primary text-center px-4 py-2.5 rounded-xl text-sm font-semibold">Consulta gratis</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ===================== HERO ===================== -->
+<section id="hero" class="hero-pattern dot-grid min-h-screen flex items-center pt-16 overflow-hidden relative">
+
+  <!-- Background blobs -->
+  <div class="hero-blob-1 absolute top-24 left-1/4 w-72 h-72 rounded-full opacity-30 pointer-events-none" style="background: radial-gradient(circle, rgba(37,99,235,0.18) 0%, transparent 70%);"></div>
+  <div class="hero-blob-2 absolute bottom-32 right-1/3 w-96 h-96 rounded-full opacity-20 pointer-events-none" style="background: radial-gradient(circle, rgba(99,102,241,0.20) 0%, transparent 70%);"></div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-20 md:py-24">
+    <div class="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
+
+      <!-- Left column -->
+      <div class="flex flex-col items-start">
+
+        <!-- Badge -->
+        <div class="hero-badge pill-badge inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full mb-6">
+          <span class="w-1.5 h-1.5 rounded-full bg-blue-600 inline-block"></span>
+          Agencia digital &middot; Vallecas, Madrid
+        </div>
+
+        <!-- Heading -->
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.05] text-slate-900 mb-6">
+          <span class="hero-line-1 block">Tu negocio</span>
+          <span class="hero-line-2 block gradient-text">visible online</span>
+          <span class="hero-line-3 block">en Vallecas</span>
+        </h1>
+
+        <!-- Subtitle -->
+        <p class="hero-sub text-lg text-slate-500 leading-relaxed mb-8 max-w-lg">
+          Diseñamos webs profesionales, gestionamos tu Google My Business y posicionamos tu negocio local para que los vecinos del barrio te encuentren primero.
+        </p>
+
+        <!-- CTAs -->
+        <div class="hero-ctas flex flex-wrap gap-3 mb-10">
+          <a href="#contacto" class="btn-primary inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-semibold text-sm">
+            Empieza hoy gratis
+            <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </a>
+          <a href="#portfolio" class="btn-ghost inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-semibold text-sm">
+            Ver trabajos
+          </a>
+        </div>
+
+        <!-- Trust strip -->
+        <div class="hero-trust flex flex-wrap items-center gap-x-6 gap-y-2">
+          <div class="flex items-center gap-1.5 text-sm text-slate-500">
+            <svg width="16" height="16" fill="#22c55e" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+            Sin permanencia
+          </div>
+          <div class="flex items-center gap-1.5 text-sm text-slate-500">
+            <svg width="16" height="16" fill="#22c55e" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+            Primera consulta gratuita
+          </div>
+          <div class="flex items-center gap-1.5 text-sm text-slate-500">
+            <svg width="16" height="16" fill="#22c55e" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+            Resultados en 30 dias
+          </div>
+        </div>
+      </div>
+
+      <!-- Right column: Phone mockup SVG -->
+      <div class="flex justify-center md:justify-end">
+        <div class="hero-illustration-wrap w-full max-w-sm lg:max-w-md">
+          <svg viewBox="0 0 460 560" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto">
+            <defs>
+              <filter id="phoneShadow" x="-30%" y="-10%" width="160%" height="130%">
+                <feDropShadow dx="0" dy="20" stdDeviation="28" flood-color="rgba(37,99,235,0.18)"/>
+              </filter>
+              <filter id="badgeShadow" x="-20%" y="-20%" width="140%" height="140%">
+                <feDropShadow dx="0" dy="6" stdDeviation="12" flood-color="rgba(15,23,42,0.10)"/>
+              </filter>
+              <linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#2563eb"/>
+                <stop offset="100%" stop-color="#4338ca"/>
+              </linearGradient>
+              <clipPath id="phoneScreen">
+                <rect x="120" y="18" width="220" height="498" rx="30"/>
+              </clipPath>
+            </defs>
+
+            <!-- Phone frame -->
+            <rect x="110" y="6" width="240" height="520" rx="40" fill="#1e293b" filter="url(#phoneShadow)"/>
+            <rect x="114" y="10" width="232" height="512" rx="37" fill="#0f172a"/>
+
+            <!-- Phone content clipped to screen -->
+            <g clip-path="url(#phoneScreen)">
+              <!-- Screen background -->
+              <rect x="120" y="18" width="220" height="498" fill="#f8fafc"/>
+
+              <!-- Blue header -->
+              <rect x="120" y="18" width="220" height="90" fill="url(#blueGrad)"/>
+              <!-- Status bar -->
+              <rect x="130" y="26" width="28" height="5" rx="2.5" fill="rgba(255,255,255,0.5)"/>
+              <rect x="300" y="26" width="32" height="5" rx="2.5" fill="rgba(255,255,255,0.5)"/>
+              <!-- Business name -->
+              <rect x="130" y="50" width="110" height="10" rx="5" fill="white"/>
+              <!-- Subtitle -->
+              <rect x="130" y="66" width="80" height="7" rx="3.5" fill="rgba(255,255,255,0.55)"/>
+              <!-- Stars -->
+              <rect x="130" y="82" width="8" height="8" rx="1.5" fill="#fbbf24"/>
+              <rect x="141" y="82" width="8" height="8" rx="1.5" fill="#fbbf24"/>
+              <rect x="152" y="82" width="8" height="8" rx="1.5" fill="#fbbf24"/>
+              <rect x="163" y="82" width="8" height="8" rx="1.5" fill="#fbbf24"/>
+              <rect x="174" y="82" width="8" height="8" rx="1.5" fill="rgba(255,255,255,0.35)"/>
+
+              <!-- Map area -->
+              <rect x="120" y="108" width="220" height="132" fill="#f0f9ff"/>
+              <line x1="120" y1="128" x2="340" y2="128" stroke="#bfdbfe" stroke-width="0.8"/>
+              <line x1="120" y1="148" x2="340" y2="148" stroke="#bfdbfe" stroke-width="0.8"/>
+              <line x1="120" y1="168" x2="340" y2="168" stroke="#bfdbfe" stroke-width="0.8"/>
+              <line x1="120" y1="188" x2="340" y2="188" stroke="#bfdbfe" stroke-width="0.8"/>
+              <line x1="120" y1="208" x2="340" y2="208" stroke="#bfdbfe" stroke-width="0.8"/>
+              <line x1="120" y1="228" x2="340" y2="228" stroke="#bfdbfe" stroke-width="0.8"/>
+              <line x1="148" y1="108" x2="148" y2="240" stroke="#bfdbfe" stroke-width="0.8"/>
+              <line x1="176" y1="108" x2="176" y2="240" stroke="#bfdbfe" stroke-width="0.8"/>
+              <line x1="204" y1="108" x2="204" y2="240" stroke="#bfdbfe" stroke-width="0.8"/>
+              <line x1="232" y1="108" x2="232" y2="240" stroke="#bfdbfe" stroke-width="0.8"/>
+              <line x1="260" y1="108" x2="260" y2="240" stroke="#bfdbfe" stroke-width="0.8"/>
+              <line x1="288" y1="108" x2="288" y2="240" stroke="#bfdbfe" stroke-width="0.8"/>
+              <line x1="316" y1="108" x2="316" y2="240" stroke="#bfdbfe" stroke-width="0.8"/>
+              <!-- Buildings -->
+              <rect x="130" y="118" width="28" height="22" rx="3" fill="#c7d2fe"/>
+              <rect x="162" y="122" width="20" height="18" rx="3" fill="#bfdbfe"/>
+              <rect x="186" y="114" width="32" height="26" rx="3" fill="#a5f3fc"/>
+              <rect x="222" y="120" width="24" height="20" rx="3" fill="#bbf7d0"/>
+              <rect x="252" y="116" width="18" height="24" rx="3" fill="#fecaca"/>
+              <rect x="275" y="122" width="28" height="18" rx="3" fill="#c7d2fe"/>
+              <rect x="308" y="118" width="20" height="22" rx="3" fill="#bfdbfe"/>
+              <rect x="134" y="158" width="36" height="20" rx="3" fill="#bbf7d0"/>
+              <rect x="175" y="154" width="22" height="24" rx="3" fill="#fecaca"/>
+              <rect x="202" y="158" width="30" height="20" rx="3" fill="#c7d2fe"/>
+              <rect x="240" y="152" width="26" height="28" rx="3" fill="#a5f3fc"/>
+              <rect x="272" y="156" width="20" height="22" rx="3" fill="#bbf7d0"/>
+              <rect x="298" y="152" width="30" height="26" rx="3" fill="#bfdbfe"/>
+              <!-- Location pin -->
+              <path d="M230,145 C222,145 215,152 215,160 C215,172 230,188 230,188 C230,188 245,172 245,160 C245,152 238,145 230,145 Z" fill="#2563eb"/>
+              <circle cx="230" cy="160" r="5" fill="white"/>
+
+              <!-- Business info card -->
+              <rect x="124" y="244" width="212" height="74" rx="14" fill="white" filter="url(#badgeShadow)"/>
+              <circle cx="148" cy="281" r="18" fill="#dbeafe"/>
+              <rect x="142" y="276" width="12" height="10" rx="2" fill="#2563eb"/>
+              <rect x="172" y="268" width="96" height="9" rx="4.5" fill="#0f172a"/>
+              <rect x="172" y="281" width="72" height="7" rx="3.5" fill="#94a3b8"/>
+              <rect x="172" y="296" width="8" height="8" rx="1.5" fill="#fbbf24"/>
+              <rect x="183" y="296" width="8" height="8" rx="1.5" fill="#fbbf24"/>
+              <rect x="194" y="296" width="8" height="8" rx="1.5" fill="#fbbf24"/>
+              <rect x="205" y="296" width="8" height="8" rx="1.5" fill="#fbbf24"/>
+              <rect x="216" y="296" width="8" height="8" rx="1.5" fill="#fbbf24"/>
+
+              <!-- Action buttons -->
+              <rect x="124" y="322" width="100" height="38" rx="12" fill="#2563eb"/>
+              <rect x="136" y="335" width="50" height="8" rx="4" fill="white"/>
+              <rect x="236" y="322" width="100" height="38" rx="12" fill="#f1f5f9"/>
+              <rect x="248" y="335" width="50" height="8" rx="4" fill="#64748b"/>
+
+              <!-- Content list -->
+              <circle cx="138" cy="381" r="10" fill="#eff6ff"/>
+              <rect x="133" y="378" width="10" height="6" rx="1.5" fill="#2563eb"/>
+              <rect x="154" y="376" width="80" height="7" rx="3.5" fill="#0f172a"/>
+              <rect x="154" y="387" width="60" height="5" rx="2.5" fill="#94a3b8"/>
+
+              <circle cx="138" cy="415" r="10" fill="#f0fdf4"/>
+              <rect x="133" y="412" width="10" height="6" rx="1.5" fill="#16a34a"/>
+              <rect x="154" y="410" width="90" height="7" rx="3.5" fill="#0f172a"/>
+              <rect x="154" y="421" width="65" height="5" rx="2.5" fill="#94a3b8"/>
+
+              <circle cx="138" cy="449" r="10" fill="#fefce8"/>
+              <rect x="133" y="446" width="10" height="6" rx="1.5" fill="#ca8a04"/>
+              <rect x="154" y="444" width="75" height="7" rx="3.5" fill="#0f172a"/>
+              <rect x="154" y="455" width="55" height="5" rx="2.5" fill="#94a3b8"/>
+
+              <!-- Bottom nav bar -->
+              <rect x="120" y="468" width="220" height="48" fill="#f8fafc"/>
+              <line x1="120" y1="468" x2="340" y2="468" stroke="#e2e8f0" stroke-width="1"/>
+              <circle cx="152" cy="484" r="8" fill="#dbeafe"/>
+              <circle cx="186" cy="484" r="8" fill="#e2e8f0"/>
+              <circle cx="220" cy="484" r="8" fill="#e2e8f0"/>
+              <circle cx="254" cy="484" r="8" fill="#e2e8f0"/>
+              <circle cx="288" cy="484" r="8" fill="#e2e8f0"/>
+              <rect x="200" y="506" width="60" height="4" rx="2" fill="#cbd5e1"/>
+            </g>
+
+            <!-- Notch (above clip) -->
+            <rect x="184" y="18" width="92" height="22" rx="11" fill="#0f172a"/>
+            <circle cx="262" cy="29" r="4" fill="#1e293b"/>
+
+            <!-- Floating badge 1 -->
+            <g class="float-badge-1">
+              <rect x="0" y="115" width="132" height="60" rx="16" fill="white" filter="url(#badgeShadow)"/>
+              <circle cx="22" cy="145" r="14" fill="#dbeafe"/>
+              <rect x="16" y="148" width="4" height="6" rx="1" fill="#2563eb"/>
+              <rect x="22" y="143" width="4" height="11" rx="1" fill="#2563eb"/>
+              <rect x="28" y="140" width="4" height="14" rx="1" fill="#2563eb"/>
+              <rect x="44" y="136" width="72" height="8" rx="4" fill="#0f172a"/>
+              <rect x="44" y="149" width="52" height="6" rx="3" fill="#94a3b8"/>
+              <rect x="44" y="160" width="40" height="8" rx="4" fill="#dbeafe"/>
+            </g>
+
+            <!-- Floating badge 2 -->
+            <g class="float-badge-2">
+              <rect x="350" y="195" width="110" height="58" rx="16" fill="white" filter="url(#badgeShadow)"/>
+              <circle cx="372" cy="224" r="14" fill="#dcfce7"/>
+              <path d="M372,231 L372,217 M368,221 L372,217 L376,221" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <rect x="392" y="215" width="58" height="8" rx="4" fill="#0f172a"/>
+              <rect x="392" y="228" width="42" height="6" rx="3" fill="#94a3b8"/>
+              <rect x="392" y="239" width="36" height="7" rx="3.5" fill="#dcfce7"/>
+            </g>
+
+            <!-- Floating badge 3 -->
+            <g class="float-badge-3">
+              <rect x="342" y="365" width="118" height="58" rx="16" fill="white" filter="url(#badgeShadow)"/>
+              <circle cx="364" cy="394" r="14" fill="#fef3c7"/>
+              <path d="M364,385 L366,391 L372,391 L367,395 L369,401 L364,397 L359,401 L361,395 L356,391 L362,391 Z" fill="#f59e0b"/>
+              <rect x="384" y="385" width="66" height="8" rx="4" fill="#0f172a"/>
+              <rect x="384" y="398" width="48" height="6" rx="3" fill="#94a3b8"/>
+              <rect x="384" y="409" width="8" height="7" rx="1.5" fill="#fbbf24"/>
+              <rect x="395" y="409" width="8" height="7" rx="1.5" fill="#fbbf24"/>
+              <rect x="406" y="409" width="8" height="7" rx="1.5" fill="#fbbf24"/>
+              <rect x="417" y="409" width="8" height="7" rx="1.5" fill="#fbbf24"/>
+              <rect x="428" y="409" width="8" height="7" rx="1.5" fill="#e2e8f0"/>
+            </g>
+          </svg>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== STATS ===================== -->
+<section class="stats-section section-gray py-14 border-y border-slate-100">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+
+      <div class="stat-item flex flex-col items-center gap-1">
+        <div class="text-4xl font-black text-slate-900 stat-number">
+          <span id="stat-1">100</span>%
+        </div>
+        <div class="text-sm font-medium text-slate-500">Gestion delegada</div>
+      </div>
+
+      <div class="stat-item flex flex-col items-center gap-1">
+        <div class="text-4xl font-black text-slate-900 stat-number">
+          <span id="stat-2">98</span>%
+        </div>
+        <div class="text-sm font-medium text-slate-500">Satisfaccion cliente</div>
+      </div>
+
+      <div class="stat-item flex flex-col items-center gap-1">
+        <div class="text-4xl font-black text-slate-900 stat-number">
+          <span id="stat-3">3</span>&times;
+        </div>
+        <div class="text-sm font-medium text-slate-500">Visibilidad media</div>
+      </div>
+
+      <div class="stat-item flex flex-col items-center gap-1">
+        <div class="text-4xl font-black text-slate-900 stat-number">24h</div>
+        <div class="text-sm font-medium text-slate-500">Tiempo de respuesta</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SERVICES ===================== -->
+<section id="servicios" class="py-24">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="section-header text-center mb-16">
+      <span class="pill-badge inline-flex items-center px-3 py-1 rounded-full mb-4">Servicios</span>
+      <h2 class="text-3xl sm:text-4xl font-black text-slate-900 mb-4">Todo lo que tu negocio necesita</h2>
+      <p class="text-lg text-slate-500 max-w-xl mx-auto">Soluciones digitales completas disenadas especificamente para negocios locales en Madrid.</p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6">
+
+      <!-- Service 1 -->
+      <div class="service-card card p-8 flex flex-col">
+        <div class="w-12 h-12 rounded-2xl bg-blue-50 flex items-center justify-center mb-6 flex-shrink-0">
+          <svg width="24" height="24" fill="none" stroke="#2563eb" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="18" height="18" rx="3"/>
+            <path d="M3 9h18M9 21V9"/>
+          </svg>
+        </div>
+        <h3 class="text-xl font-bold text-slate-900 mb-3">Web Profesional</h3>
+        <p class="text-slate-500 text-sm leading-relaxed mb-6 flex-1">Diseño moderno, rápido y adaptado a móvil. Tu web lista en menos de 2 semanas con dominio y hosting incluidos.</p>
+        <ul class="flex flex-col gap-2">
+          <li class="flex items-center gap-2 text-sm text-slate-600">
+            <svg class="text-blue-600 flex-shrink-0" width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+            Diseno a medida
+          </li>
+          <li class="flex items-center gap-2 text-sm text-slate-600">
+            <svg class="text-blue-600 flex-shrink-0" width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+            SSL + dominio incluido
+          </li>
+          <li class="flex items-center gap-2 text-sm text-slate-600">
+            <svg class="text-blue-600 flex-shrink-0" width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+            Optimizado para movil
+          </li>
+        </ul>
+      </div>
+
+      <!-- Service 2 -->
+      <div class="service-card card p-8 flex flex-col">
+        <div class="w-12 h-12 rounded-2xl bg-blue-50 flex items-center justify-center mb-6 flex-shrink-0">
+          <svg width="24" height="24" fill="none" stroke="#2563eb" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"/>
+            <path d="M21 21l-4.35-4.35"/>
+          </svg>
+        </div>
+        <h3 class="text-xl font-bold text-slate-900 mb-3">SEO Local</h3>
+        <p class="text-slate-500 text-sm leading-relaxed mb-6 flex-1">Aparece en Google cuando los vecinos buscan tu negocio. Optimización de Google My Business y posicionamiento local.</p>
+        <ul class="flex flex-col gap-2">
+          <li class="flex items-center gap-2 text-sm text-slate-600">
+            <svg class="text-blue-600 flex-shrink-0" width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+            Google My Business
+          </li>
+          <li class="flex items-center gap-2 text-sm text-slate-600">
+            <svg class="text-blue-600 flex-shrink-0" width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+            Posicionamiento en mapas
+          </li>
+          <li class="flex items-center gap-2 text-sm text-slate-600">
+            <svg class="text-blue-600 flex-shrink-0" width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+            Informes mensuales
+          </li>
+        </ul>
+      </div>
+
+      <!-- Service 3 -->
+      <div class="service-card card p-8 flex flex-col">
+        <div class="w-12 h-12 rounded-2xl bg-blue-50 flex items-center justify-center mb-6 flex-shrink-0">
+          <svg width="24" height="24" fill="none" stroke="#2563eb" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+          </svg>
+        </div>
+        <h3 class="text-xl font-bold text-slate-900 mb-3">Publicidad Online</h3>
+        <p class="text-slate-500 text-sm leading-relaxed mb-6 flex-1">Campañas de Google Ads y Meta Ads gestionadas por expertos. Más clientes con el presupuesto justo.</p>
+        <ul class="flex flex-col gap-2">
+          <li class="flex items-center gap-2 text-sm text-slate-600">
+            <svg class="text-blue-600 flex-shrink-0" width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+            Google Ads + Meta Ads
+          </li>
+          <li class="flex items-center gap-2 text-sm text-slate-600">
+            <svg class="text-blue-600 flex-shrink-0" width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+            Segmentacion local
+          </li>
+          <li class="flex items-center gap-2 text-sm text-slate-600">
+            <svg class="text-blue-600 flex-shrink-0" width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+            Sin coste de gestion fijo
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PORTFOLIO ===================== -->
+<section id="portfolio" class="section-gray py-24">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="section-header text-center mb-16">
+      <span class="pill-badge inline-flex items-center px-3 py-1 rounded-full mb-4">Portfolio</span>
+      <h2 class="text-3xl sm:text-4xl font-black text-slate-900 mb-4">Trabajos recientes</h2>
+      <p class="text-lg text-slate-500 max-w-xl mx-auto">Proyectos reales para negocios de Vallecas y alrededores.</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8">
+
+      <!-- Portfolio card 1 — Barate 2010 -->
+      <div class="portfolio-left shine card overflow-hidden">
+        <div class="w-full">
+          <svg viewBox="0 0 400 190" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto">
+            <rect width="400" height="190" fill="white"/>
+            <rect width="400" height="38" fill="#f8fafc"/>
+            <rect y="28" width="400" height="10" fill="#f1f5f9"/>
+            <circle cx="18" cy="19" r="5" fill="#fca5a5"/>
+            <circle cx="36" cy="19" r="5" fill="#fde68a"/>
+            <circle cx="54" cy="19" r="5" fill="#bbf7d0"/>
+            <rect x="72" y="11" width="256" height="16" rx="8" fill="#e2e8f0"/>
+            <rect x="84" y="15" width="100" height="8" rx="4" fill="#cbd5e1"/>
+            <rect y="38" width="400" height="34" fill="#1e40af"/>
+            <rect x="16" y="49" width="60" height="8" rx="4" fill="white"/>
+            <rect x="96" y="49" width="40" height="8" rx="4" fill="rgba(255,255,255,0.55)"/>
+            <rect x="148" y="49" width="40" height="8" rx="4" fill="rgba(255,255,255,0.55)"/>
+            <rect x="200" y="49" width="40" height="8" rx="4" fill="rgba(255,255,255,0.55)"/>
+            <rect x="332" y="45" width="54" height="16" rx="8" fill="white"/>
+            <rect y="72" width="400" height="72" fill="#dbeafe"/>
+            <rect x="16" y="86" width="180" height="12" rx="6" fill="#1e40af"/>
+            <rect x="16" y="104" width="130" height="9" rx="4.5" fill="#93c5fd"/>
+            <rect x="252" y="82" width="132" height="56" rx="10" fill="white" opacity="0.6"/>
+            <rect x="0" y="150" width="120" height="40" fill="white" stroke="#e2e8f0" stroke-width="1"/>
+            <rect x="8" y="158" width="60" height="7" rx="3.5" fill="#1e40af"/>
+            <rect x="8" y="170" width="40" height="5" rx="2.5" fill="#94a3b8"/>
+            <rect x="140" y="150" width="120" height="40" fill="white" stroke="#e2e8f0" stroke-width="1"/>
+            <rect x="148" y="158" width="60" height="7" rx="3.5" fill="#1e40af"/>
+            <rect x="148" y="170" width="40" height="5" rx="2.5" fill="#94a3b8"/>
+            <rect x="280" y="150" width="120" height="40" fill="white" stroke="#e2e8f0" stroke-width="1"/>
+            <rect x="288" y="158" width="60" height="7" rx="3.5" fill="#1e40af"/>
+            <rect x="288" y="170" width="40" height="5" rx="2.5" fill="#94a3b8"/>
+          </svg>
+        </div>
+        <div class="p-6">
+          <div class="flex items-start justify-between mb-3">
+            <div>
+              <h3 class="text-lg font-bold text-slate-900">Barate 2010</h3>
+              <p class="text-sm text-slate-500">Electricista &middot; Vallecas</p>
+            </div>
+            <span class="pill-badge px-2.5 py-1 rounded-full text-xs">Web + SEO</span>
+          </div>
+          <p class="text-sm text-slate-500 mb-4">Rediseno completo de la web con tienda online y posicionamiento SEO local. +210% de visitas organicas en 3 meses.</p>
+          <a href="https://barate2010.es" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-sm font-semibold text-blue-600 hover:text-blue-700 transition-colors">
+            Ver proyecto
+            <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Portfolio card 2 — Farmazul -->
+      <div class="portfolio-right shine card overflow-hidden">
+        <div class="w-full">
+          <svg viewBox="0 0 400 190" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto">
+            <rect width="400" height="190" fill="white"/>
+            <rect width="400" height="38" fill="#f8fafc"/>
+            <rect y="28" width="400" height="10" fill="#f1f5f9"/>
+            <circle cx="18" cy="19" r="5" fill="#fca5a5"/>
+            <circle cx="36" cy="19" r="5" fill="#fde68a"/>
+            <circle cx="54" cy="19" r="5" fill="#bbf7d0"/>
+            <rect x="72" y="11" width="256" height="16" rx="8" fill="#e2e8f0"/>
+            <rect x="84" y="15" width="100" height="8" rx="4" fill="#cbd5e1"/>
+            <rect y="38" width="400" height="34" fill="#0f766e"/>
+            <rect x="16" y="49" width="60" height="8" rx="4" fill="white"/>
+            <rect x="96" y="49" width="40" height="8" rx="4" fill="rgba(255,255,255,0.55)"/>
+            <rect x="148" y="49" width="40" height="8" rx="4" fill="rgba(255,255,255,0.55)"/>
+            <rect x="200" y="49" width="40" height="8" rx="4" fill="rgba(255,255,255,0.55)"/>
+            <rect x="332" y="45" width="54" height="16" rx="8" fill="white"/>
+            <rect y="72" width="400" height="72" fill="#ccfbf1"/>
+            <rect x="16" y="86" width="180" height="12" rx="6" fill="#0f766e"/>
+            <rect x="16" y="104" width="130" height="9" rx="4.5" fill="#5eead4"/>
+            <rect x="252" y="82" width="132" height="56" rx="10" fill="white" opacity="0.6"/>
+            <rect x="0" y="150" width="120" height="40" fill="white" stroke="#e2e8f0" stroke-width="1"/>
+            <rect x="8" y="158" width="60" height="7" rx="3.5" fill="#0f766e"/>
+            <rect x="8" y="170" width="40" height="5" rx="2.5" fill="#94a3b8"/>
+            <rect x="140" y="150" width="120" height="40" fill="white" stroke="#e2e8f0" stroke-width="1"/>
+            <rect x="148" y="158" width="60" height="7" rx="3.5" fill="#0f766e"/>
+            <rect x="148" y="170" width="40" height="5" rx="2.5" fill="#94a3b8"/>
+            <rect x="280" y="150" width="120" height="40" fill="white" stroke="#e2e8f0" stroke-width="1"/>
+            <rect x="288" y="158" width="60" height="7" rx="3.5" fill="#0f766e"/>
+            <rect x="288" y="170" width="40" height="5" rx="2.5" fill="#94a3b8"/>
+          </svg>
+        </div>
+        <div class="p-6">
+          <div class="flex items-start justify-between mb-3">
+            <div>
+              <h3 class="text-lg font-bold text-slate-900">Farmazul</h3>
+              <p class="text-sm text-slate-500">Parafarmacia &middot; Puente de Vallecas</p>
+            </div>
+            <span class="pill-badge px-2.5 py-1 rounded-full text-xs">Web + GMB</span>
+          </div>
+          <p class="text-sm text-slate-500 mb-4">Web con catalogo de productos y gestion de Google My Business. Aparece en el top 3 de busquedas locales de farmacia.</p>
+          <a href="https://farmazul.es" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-sm font-semibold text-blue-600 hover:text-blue-700 transition-colors">
+            Ver proyecto
+            <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PRICING ===================== -->
+<section id="precios" class="py-24">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="section-header text-center mb-16">
+      <span class="pill-badge inline-flex items-center px-3 py-1 rounded-full mb-4">Precios</span>
+      <h2 class="text-3xl sm:text-4xl font-black text-slate-900 mb-4">Planes claros, sin sorpresas</h2>
+      <p class="text-lg text-slate-500 max-w-xl mx-auto">Elige el plan que se adapta a tu negocio. Cancela cuando quieras, sin permanencia.</p>
+    </div>
+
+    <!-- SVG check/cross reutilizables como símbolos -->
+    <svg class="hidden" aria-hidden="true">
+      <!-- ✓ verde para planes claros -->
+      <symbol id="ico-check-blue" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#dcfce7"/><path d="M6 10l3 3 5-5" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></symbol>
+      <!-- ✗ roja para planes claros -->
+      <symbol id="ico-cross"      viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#fee2e2"/><path d="M7 7l6 6M13 7l-6 6" stroke="#dc2626" stroke-width="2" stroke-linecap="round" fill="none"/></symbol>
+      <!-- ✓ verde para plan popular (fondo azul) -->
+      <symbol id="ico-check-wht"  viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="rgba(255,255,255,0.30)"/><path d="M6 10l3 3 5-5" stroke="#bbf7d0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></symbol>
+      <!-- ✗ roja para plan popular (fondo azul) -->
+      <symbol id="ico-cross-wht"  viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="rgba(255,255,255,0.15)"/><path d="M7 7l6 6M13 7l-6 6" stroke="#fca5a5" stroke-width="2" stroke-linecap="round" fill="none"/></symbol>
+    </svg>
+
+    <div class="grid md:grid-cols-3 gap-6 md:items-start">
+
+      <!-- ── Plan Local ── -->
+      <div class="card pricing-side-left p-8 flex flex-col">
+        <div class="mb-6">
+          <h3 class="text-lg font-bold text-slate-900 mb-1">Plan Local</h3>
+          <p class="text-sm text-slate-500">Visibilidad en Google sin web</p>
+        </div>
+        <div class="mb-8">
+          <span class="text-5xl font-black text-slate-900">69</span>
+          <span class="text-slate-400 text-lg font-semibold">€</span>
+          <span class="text-slate-400 text-sm">/mes</span>
+        </div>
+        <ul class="flex flex-col gap-3 mb-8 flex-1">
+          <li class="flex items-start gap-2.5 text-sm text-slate-600"><svg class="flex-shrink-0 mt-0.5 w-4 h-4"><use href="#ico-check-blue"/></svg>Gestión Google Business Profile</li>
+          <li class="flex items-start gap-2.5 text-sm text-slate-600"><svg class="flex-shrink-0 mt-0.5 w-4 h-4"><use href="#ico-check-blue"/></svg>Respuesta a reseñas</li>
+          <li class="flex items-start gap-2.5 text-sm text-slate-600"><svg class="flex-shrink-0 mt-0.5 w-4 h-4"><use href="#ico-check-blue"/></svg>Publicación de fotos optimizadas</li>
+          <li class="flex items-start gap-2.5 text-sm text-slate-600"><svg class="flex-shrink-0 mt-0.5 w-4 h-4"><use href="#ico-check-blue"/></svg>Informe mensual de rendimiento</li>
+          <li class="flex items-start gap-2.5 text-sm text-red-400"><svg class="flex-shrink-0 mt-0.5 w-4 h-4"><use href="#ico-cross"/></svg>Web Landing Page profesional</li>
+          <li class="flex items-start gap-2.5 text-sm text-red-400"><svg class="flex-shrink-0 mt-0.5 w-4 h-4"><use href="#ico-cross"/></svg>Hosting Premium + SSL</li>
+          <li class="flex items-start gap-2.5 text-sm text-red-400"><svg class="flex-shrink-0 mt-0.5 w-4 h-4"><use href="#ico-cross"/></svg>Dominio incluido</li>
+          <li class="flex items-start gap-2.5 text-sm text-red-400"><svg class="flex-shrink-0 mt-0.5 w-4 h-4"><use href="#ico-cross"/></svg>Actualizaciones de contenido</li>
+          <li class="flex items-start gap-2.5 text-sm text-red-400"><svg class="flex-shrink-0 mt-0.5 w-4 h-4"><use href="#ico-cross"/></svg>SEO Local Avanzado</li>
+          <li class="flex items-start gap-2.5 text-sm text-red-400"><svg class="flex-shrink-0 mt-0.5 w-4 h-4"><use href="#ico-cross"/></svg>Soporte VIP por WhatsApp</li>
+          <li class="flex items-start gap-2.5 text-sm text-red-400"><svg class="flex-shrink-0 mt-0.5 w-4 h-4"><use href="#ico-cross"/></svg>Estrategia de contenido mensual</li>
+          <li class="flex items-start gap-2.5 text-sm text-red-400"><svg class="flex-shrink-0 mt-0.5 w-4 h-4"><use href="#ico-cross"/></svg>Análisis de competencia local</li>
+        </ul>
+        <a href="#contacto" class="btn-ghost block text-center px-6 py-3 rounded-xl font-semibold text-sm">Empezar</a>
+      </div>
+
+      <!-- ── Plan Digital Business (popular) ── -->
+      <div class="plan-popular card pricing-popular p-8 relative flex flex-col md:-my-6">
+        <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 whitespace-nowrap">
+          <span class="bg-white text-blue-600 text-xs font-bold px-3.5 py-1.5 rounded-full shadow-sm border border-blue-100">★ Más popular</span>
+        </div>
+        <div class="mb-6">
+          <h3 class="text-lg font-bold text-white mb-1">Plan Digital Business</h3>
+          <p class="text-sm text-white/70">Web + presencia local completa</p>
+        </div>
+        <div class="mb-8">
+          <span class="text-5xl font-black text-white">129</span>
+          <span class="text-white/70 text-lg font-semibold">€</span>
+          <span class="text-white/50 text-sm">/mes</span>
+        </div>
+        <ul class="flex flex-col gap-3 mb-8 flex-1">
+          <li class="flex items-start gap-2.5 text-sm text-white/90"><svg class="flex-shrink-0 mt-0.5 w-4 h-4"><use href="#ico-check-wht"/></svg>Gestión Google Business Profile</li>
+          <li class="flex items-start gap-2.5 text-sm text-white/90"><svg class="flex-shrink-0 mt-0.5 w-4 h-4"><use href="#ico-check-wht"/></svg>Respuesta a reseñas</li>
+          <li class="flex items-start gap-2.5 text-sm text-white/90"><svg class="flex-shrink-0 mt-0.5 w-4 h-4"><use href="#ico-check-wht"/></svg>Publicación de fotos optimizadas</li>
+          <li class="flex items-start gap-2.5 text-sm text-white/90"><svg class="flex-shrink-0 mt-0.5 w-4 h-4"><use href="#ico-check-wht"/></svg>Informe mensual de rendimiento</li>
+          <li class="flex items-start gap-2.5 text-sm text-white/90"><svg class="flex-shrink-0 mt-0.5 w-4 h-4"><use href="#ico-check-wht"/></svg>Web Landing Page profesional</li>
+          <li class="flex items-start gap-2.5 text-sm text-white/90"><svg class="flex-shrink-0 mt-0.5 w-4 h-4"><use href="#ico-check-wht"/></svg>Hosting Premium + SSL</li>
+          <li class="flex items-start gap-2.5 text-sm text-white/90"><svg class="flex-shrink-0 mt-0.5 w-4 h-4"><use href="#ico-check-wht"/></svg>Dominio incluido</li>
+          <li class="flex items-start gap-2.5 text-sm text-white/90"><svg class="flex-shrink-0 mt-0.5 w-4 h-4"><use href="#ico-check-wht"/></svg>Actualizaciones de contenido</li>
+          <li class="flex items-start gap-2.5 text-sm text-red-200"><svg class="flex-shrink-0 mt-0.5 w-4 h-4"><use href="#ico-cross-wht"/></svg>SEO Local Avanzado</li>
+          <li class="flex items-start gap-2.5 text-sm text-red-200"><svg class="flex-shrink-0 mt-0.5 w-4 h-4"><use href="#ico-cross-wht"/></svg>Soporte VIP por WhatsApp</li>
+          <li class="flex items-start gap-2.5 text-sm text-red-200"><svg class="flex-shrink-0 mt-0.5 w-4 h-4"><use href="#ico-cross-wht"/></svg>Estrategia de contenido mensual</li>
+          <li class="flex items-start gap-2.5 text-sm text-red-200"><svg class="flex-shrink-0 mt-0.5 w-4 h-4"><use href="#ico-cross-wht"/></svg>Análisis de competencia local</li>
+        </ul>
+        <a href="#contacto" class="block text-center bg-white text-blue-600 hover:bg-blue-50 transition-colors px-6 py-3 rounded-xl font-bold text-sm">Empezar</a>
+      </div>
+
+      <!-- ── Plan Dominio Total ── -->
+      <div class="card pricing-side-right p-8 flex flex-col">
+        <div class="mb-6">
+          <h3 class="text-lg font-bold text-slate-900 mb-1">Plan Dominio Total</h3>
+          <p class="text-sm text-slate-500">Para liderar en tu sector</p>
+        </div>
+        <div class="mb-8">
+          <span class="text-5xl font-black text-slate-900">199</span>
+          <span class="text-slate-400 text-lg font-semibold">€</span>
+          <span class="text-slate-400 text-sm">/mes</span>
+        </div>
+        <ul class="flex flex-col gap-3 mb-8 flex-1">
+          <li class="flex items-start gap-2.5 text-sm text-slate-600"><svg class="flex-shrink-0 mt-0.5 w-4 h-4"><use href="#ico-check-blue"/></svg>Gestión Google Business Profile</li>
+          <li class="flex items-start gap-2.5 text-sm text-slate-600"><svg class="flex-shrink-0 mt-0.5 w-4 h-4"><use href="#ico-check-blue"/></svg>Respuesta a reseñas</li>
+          <li class="flex items-start gap-2.5 text-sm text-slate-600"><svg class="flex-shrink-0 mt-0.5 w-4 h-4"><use href="#ico-check-blue"/></svg>Publicación de fotos optimizadas</li>
+          <li class="flex items-start gap-2.5 text-sm text-slate-600"><svg class="flex-shrink-0 mt-0.5 w-4 h-4"><use href="#ico-check-blue"/></svg>Informe mensual de rendimiento</li>
+          <li class="flex items-start gap-2.5 text-sm text-slate-600"><svg class="flex-shrink-0 mt-0.5 w-4 h-4"><use href="#ico-check-blue"/></svg>Web Landing Page profesional</li>
+          <li class="flex items-start gap-2.5 text-sm text-slate-600"><svg class="flex-shrink-0 mt-0.5 w-4 h-4"><use href="#ico-check-blue"/></svg>Hosting Premium + SSL</li>
+          <li class="flex items-start gap-2.5 text-sm text-slate-600"><svg class="flex-shrink-0 mt-0.5 w-4 h-4"><use href="#ico-check-blue"/></svg>Dominio incluido</li>
+          <li class="flex items-start gap-2.5 text-sm text-slate-600"><svg class="flex-shrink-0 mt-0.5 w-4 h-4"><use href="#ico-check-blue"/></svg>Actualizaciones de contenido</li>
+          <li class="flex items-start gap-2.5 text-sm text-slate-600"><svg class="flex-shrink-0 mt-0.5 w-4 h-4"><use href="#ico-check-blue"/></svg>SEO Local Avanzado</li>
+          <li class="flex items-start gap-2.5 text-sm text-slate-600"><svg class="flex-shrink-0 mt-0.5 w-4 h-4"><use href="#ico-check-blue"/></svg>Soporte VIP por WhatsApp</li>
+          <li class="flex items-start gap-2.5 text-sm text-slate-600"><svg class="flex-shrink-0 mt-0.5 w-4 h-4"><use href="#ico-check-blue"/></svg>Estrategia de contenido mensual</li>
+          <li class="flex items-start gap-2.5 text-sm text-slate-600"><svg class="flex-shrink-0 mt-0.5 w-4 h-4"><use href="#ico-check-blue"/></svg>Análisis de competencia local</li>
+        </ul>
+        <a href="#contacto" class="btn-ghost block text-center px-6 py-3 rounded-xl font-semibold text-sm">Empezar</a>
+      </div>
+
+    </div>
+
+    <p class="text-center text-slate-400 text-sm mt-10 flex items-center justify-center gap-2">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+      Sin permanencia &middot; Cancela cuando quieras &middot; Sin letra pequeña
+    </p>
+  </div>
+</section>
+
+<!-- ===================== TRUST ===================== -->
+<section id="confianza" class="trust-section section-gray py-24">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="section-header text-center mb-16">
+      <span class="pill-badge inline-flex items-center px-3 py-1 rounded-full mb-4">Clientes</span>
+      <h2 class="text-3xl sm:text-4xl font-black text-slate-900 mb-4">Lo dicen nuestros clientes</h2>
+      <p class="text-lg text-slate-500 max-w-xl mx-auto">Negocios de Vallecas que ya confian en nosotros para su presencia digital.</p>
+    </div>
+
+    <div class="trust-card card p-8 md:p-12" style="background: linear-gradient(135deg, #eff6ff 0%, #f0f9ff 100%);">
+      <div class="grid md:grid-cols-3 gap-8 md:gap-12">
+
+        <div class="trust-feature flex flex-col gap-4">
+          <div class="flex gap-1">
+            <svg width="18" height="18" fill="#fbbf24" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg width="18" height="18" fill="#fbbf24" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg width="18" height="18" fill="#fbbf24" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg width="18" height="18" fill="#fbbf24" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg width="18" height="18" fill="#fbbf24" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          </div>
+          <blockquote class="text-slate-700 text-sm leading-relaxed italic">
+            "Antes no apareciamos en Google. Ahora somos los primeros cuando buscan ferreteria en Vallecas. El cambio fue brutal en menos de dos meses."
+          </blockquote>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-blue-200 flex items-center justify-center font-bold text-blue-700 text-sm">JM</div>
+            <div>
+              <div class="text-sm font-semibold text-slate-900">Eduardo</div>
+              <div class="text-xs text-slate-500">Barate 2010 &middot; Electricista</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="trust-feature flex flex-col gap-4">
+          <div class="flex gap-1">
+            <svg width="18" height="18" fill="#fbbf24" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg width="18" height="18" fill="#fbbf24" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg width="18" height="18" fill="#fbbf24" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg width="18" height="18" fill="#fbbf24" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg width="18" height="18" fill="#fbbf24" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          </div>
+          <blockquote class="text-slate-700 text-sm leading-relaxed italic">
+            "El equipo lo gestiona todo. Yo me dedico a la farmacia y ellos a la parte digital. Las resenas han subido mucho y llaman mas clientes nuevos."
+          </blockquote>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-teal-100 flex items-center justify-center font-bold text-teal-700 text-sm">LG</div>
+            <div>
+              <div class="text-sm font-semibold text-slate-900">Yeni</div>
+              <div class="text-xs text-slate-500">Farmazul &middot; Parafarmacia</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="trust-feature flex flex-col gap-4">
+          <div class="flex gap-1">
+            <svg width="18" height="18" fill="#fbbf24" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg width="18" height="18" fill="#fbbf24" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg width="18" height="18" fill="#fbbf24" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg width="18" height="18" fill="#fbbf24" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg width="18" height="18" fill="#fbbf24" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          </div>
+          <blockquote class="text-slate-700 text-sm leading-relaxed italic">
+            "Pusimos anuncios en Google y en tres semanas ya recuperamos la inversion. El soporte por WhatsApp es rapidisimo. Muy recomendable para cualquier negocio del barrio."
+          </blockquote>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-orange-100 flex items-center justify-center font-bold text-orange-700 text-sm">CP</div>
+            <div>
+              <div class="text-sm font-semibold text-slate-900">Carlos P.</div>
+              <div class="text-xs text-slate-500">Taller Puente Vallecas</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===================== CONTACT ===================== -->
+<section id="contacto" class="py-24">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="section-header text-center mb-12">
+      <span class="pill-badge inline-flex items-center px-3 py-1 rounded-full mb-4">Contacto</span>
+      <h2 class="text-3xl sm:text-4xl font-black text-slate-900 mb-4">Hablemos de tu negocio</h2>
+      <p class="text-lg text-slate-500 max-w-xl mx-auto">Primera consulta gratuita. Te respondemos en menos de 24 horas.</p>
+    </div>
+
+    <div class="contact-card card p-8 md:p-10">
+
+      <div id="form-success" class="hidden text-center py-8">
+        <div class="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-4">
+          <svg width="32" height="32" fill="none" stroke="#16a34a" viewBox="0 0 24 24" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>
+        </div>
+        <h3 class="text-xl font-bold text-slate-900 mb-2">Mensaje enviado</h3>
+        <p class="text-slate-500 text-sm">Nos pondremos en contacto contigo en menos de 24 horas.</p>
+      </div>
+
+      <form onsubmit="handleFormSubmit(event)" class="grid sm:grid-cols-2 gap-5">
+
+        <div class="flex flex-col gap-1.5">
+          <label class="text-sm font-medium text-slate-700" for="nombre">Nombre</label>
+          <input id="nombre" name="nombre" type="text" placeholder="Tu nombre" required class="form-input" />
+        </div>
+
+        <div class="flex flex-col gap-1.5">
+          <label class="text-sm font-medium text-slate-700" for="negocio">Negocio</label>
+          <input id="negocio" name="negocio" type="text" placeholder="Nombre de tu negocio" required class="form-input" />
+        </div>
+
+        <div class="flex flex-col gap-1.5">
+          <label class="text-sm font-medium text-slate-700" for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="tu@email.com" required class="form-input" />
+        </div>
+
+        <div class="flex flex-col gap-1.5">
+          <label class="text-sm font-medium text-slate-700" for="telefono">Telefono</label>
+          <input id="telefono" name="telefono" type="tel" placeholder="+34 600 000 000" class="form-input" />
+        </div>
+
+        <div class="sm:col-span-2 flex flex-col gap-1.5">
+          <label class="text-sm font-medium text-slate-700" for="servicio">Servicio de interes</label>
+          <select id="servicio" name="servicio" class="form-input">
+            <option value="">Selecciona un servicio</option>
+            <option value="web">Web Profesional</option>
+            <option value="seo">SEO Local</option>
+            <option value="ads">Publicidad Online</option>
+            <option value="todo">Gestion completa</option>
+          </select>
+        </div>
+
+        <div class="sm:col-span-2 flex flex-col gap-1.5">
+          <label class="text-sm font-medium text-slate-700" for="mensaje">Cuentanos sobre tu negocio</label>
+          <textarea id="mensaje" name="mensaje" rows="4" placeholder="Que necesitas? Cual es tu objetivo principal?" class="form-input resize-none"></textarea>
+        </div>
+
+        <div class="sm:col-span-2">
+          <button type="submit" class="btn-primary w-full flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-semibold text-sm">
+            Enviar mensaje
+            <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+          </button>
+        </div>
+
+      </form>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="bg-slate-900 text-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+    <div class="grid md:grid-cols-4 gap-10 mb-10">
+
+      <!-- Brand -->
+      <div class="md:col-span-2">
+        <a href="#" class="flex items-center gap-2.5 mb-4">
+          <div class="w-8 h-8 rounded-lg btn-primary flex items-center justify-center">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+              <path d="M3 13L7 8L10 11L13 7L15 9" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <span class="font-bold text-sm tracking-tight">Vallecas<span class="text-blue-400">Digital</span> Pro</span>
+        </a>
+        <p class="text-slate-400 text-sm leading-relaxed max-w-xs">
+          Agencia digital local especializada en negocios de Vallecas y Madrid. Webs, SEO y publicidad que funcionan.
+        </p>
+        <div class="flex gap-3 mt-5">
+          <a href="#" aria-label="Instagram" class="w-9 h-9 rounded-xl bg-slate-800 flex items-center justify-center hover:bg-blue-600 transition-colors">
+            <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="#" aria-label="LinkedIn" class="w-9 h-9 rounded-xl bg-slate-800 flex items-center justify-center hover:bg-blue-600 transition-colors">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="https://wa.me/34600000000" aria-label="WhatsApp" class="w-9 h-9 rounded-xl bg-slate-800 flex items-center justify-center hover:bg-green-600 transition-colors">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Services links -->
+      <div>
+        <h4 class="text-sm font-semibold text-white mb-4">Servicios</h4>
+        <ul class="flex flex-col gap-2.5">
+          <li><a href="#servicios" class="text-sm text-slate-400 hover:text-white transition-colors">Web Profesional</a></li>
+          <li><a href="#servicios" class="text-sm text-slate-400 hover:text-white transition-colors">SEO Local</a></li>
+          <li><a href="#servicios" class="text-sm text-slate-400 hover:text-white transition-colors">Publicidad Online</a></li>
+          <li><a href="#precios" class="text-sm text-slate-400 hover:text-white transition-colors">Ver precios</a></li>
+        </ul>
+      </div>
+
+      <!-- Company links -->
+      <div>
+        <h4 class="text-sm font-semibold text-white mb-4">Empresa</h4>
+        <ul class="flex flex-col gap-2.5">
+          <li><a href="#portfolio" class="text-sm text-slate-400 hover:text-white transition-colors">Portfolio</a></li>
+          <li><a href="#confianza" class="text-sm text-slate-400 hover:text-white transition-colors">Clientes</a></li>
+          <li><a href="#contacto" class="text-sm text-slate-400 hover:text-white transition-colors">Contacto</a></li>
+          <li><a href="#" class="text-sm text-slate-400 hover:text-white transition-colors">Aviso legal</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="border-t border-slate-800 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="text-slate-500 text-xs">&copy; 2026 Vallecas Digital Pro. Todos los derechos reservados.</p>
+      <p class="text-slate-600 text-xs">Hecho con carino en Vallecas, Madrid</p>
+    </div>
+  </div>
+</footer>
+
+<!-- GSAP CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+<!-- Main JS -->
+<script src="js/main.js"></script>
+
+</body>
+</html>

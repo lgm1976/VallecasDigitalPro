@@ -1,0 +1,78 @@
+/* =============================================
+   Vallecas Digital Pro — Custom Styles
+   Complements Tailwind CDN
+   ============================================= */
+
+/* Base, typography */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', system-ui, sans-serif; background: #ffffff; color: #0f172a; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+
+/* Gradient text */
+.gradient-text { background: linear-gradient(135deg, #2563eb 0%, #4338ca 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+
+/* Buttons */
+.btn-primary { background: linear-gradient(135deg, #2563eb 0%, #4338ca 100%); color: #fff; box-shadow: 0 4px 14px rgba(37,99,235,0.30); transition: box-shadow 0.25s, transform 0.2s; }
+.btn-primary:hover { box-shadow: 0 6px 22px rgba(37,99,235,0.42); transform: translateY(-2px); }
+.btn-primary:active { transform: translateY(0); }
+.btn-ghost { border: 1.5px solid #e2e8f0; color: #374151; background: #fff; transition: border-color 0.2s, background 0.2s, transform 0.2s, color 0.2s; }
+.btn-ghost:hover { border-color: #2563eb; color: #2563eb; background: #eff6ff; transform: translateY(-2px); }
+
+/* Cards */
+/* transform NO va en la transición base: GSAP usa transform y colisionan.
+   El hover lift se gestiona vía will-change + transición solo en hover. */
+.card { background: #fff; border: 1.5px solid #f1f5f9; border-radius: 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.05), 0 4px 20px rgba(0,0,0,0.06); transition: box-shadow 0.3s, border-color 0.3s; will-change: transform; }
+.card:hover { box-shadow: 0 6px 24px rgba(0,0,0,0.12); transform: translateY(-4px); border-color: #dbeafe; transition: box-shadow 0.3s, border-color 0.3s, transform 0.25s ease; }
+
+/* Sections */
+.section-gray { background: #f8fafc; }
+
+/* Navbar */
+#navbar { transition: background 0.35s, box-shadow 0.35s; }
+#navbar.scrolled { background: rgba(255,255,255,0.92); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); box-shadow: 0 1px 0 #e2e8f0; }
+
+/* Hero */
+.hero-pattern { background-color: #ffffff; background-image: radial-gradient(ellipse 70% 55% at 60% -5%, rgba(37,99,235,0.08) 0%, transparent 65%), radial-gradient(circle at 90% 60%, rgba(99,102,241,0.06) 0%, transparent 45%); }
+.dot-grid { background-image: radial-gradient(#cbd5e1 1px, transparent 1px); background-size: 26px 26px; }
+
+/* Float animations for hero SVG badges */
+@keyframes floatA { 0%,100% { transform: translateY(0px) rotate(-1deg); } 50% { transform: translateY(-10px) rotate(-1deg); } }
+@keyframes floatB { 0%,100% { transform: translateY(0px) rotate(1deg); } 50% { transform: translateY(-8px) rotate(1deg); } }
+@keyframes floatC { 0%,100% { transform: translateY(0px); } 50% { transform: translateY(-12px); } }
+@keyframes floatHero { 0%,100% { transform: translateY(0px); } 50% { transform: translateY(-8px); } }
+
+.float-badge-1 { animation: floatA 5s ease-in-out infinite; }
+.float-badge-2 { animation: floatB 6s ease-in-out infinite 1s; }
+.float-badge-3 { animation: floatC 4.5s ease-in-out infinite 0.5s; }
+.hero-illustration-wrap { animation: floatHero 7s ease-in-out infinite; }
+
+/* Pill badge */
+.pill-badge { background: #eff6ff; color: #2563eb; border: 1px solid #bfdbfe; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; }
+
+/* Pricing popular plan */
+.plan-popular { background: linear-gradient(160deg, #2563eb 0%, #4338ca 100%) !important; border-color: transparent !important; }
+
+/* Shine effect on portfolio cards */
+.shine { position: relative; overflow: hidden; }
+.shine::after { content: ''; position: absolute; top: -60%; left: -60%; width: 35%; height: 200%; background: linear-gradient(to right, transparent, rgba(255,255,255,0.50), transparent); transform: rotate(20deg); transition: left 0.55s ease; pointer-events: none; }
+.shine:hover::after { left: 160%; }
+
+/* Mobile menu */
+#mobile-menu { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+#mobile-menu.open { max-height: 340px; }
+
+/* Form inputs */
+.form-input { width: 100%; background: #f8fafc; border: 1.5px solid #e2e8f0; border-radius: 12px; padding: 12px 16px; font-size: 0.875rem; color: #0f172a; font-family: inherit; transition: border-color 0.2s, box-shadow 0.2s; appearance: none; }
+.form-input:focus { outline: none; border-color: #3b82f6; box-shadow: 0 0 0 3px rgba(59,130,246,0.12); }
+.form-input::placeholder { color: #94a3b8; }
+
+/* Scroll progress bar */
+#scroll-progress { position: fixed; top: 0; left: 0; height: 3px; background: linear-gradient(90deg, #2563eb, #4338ca); z-index: 200; width: 0%; }
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: #f1f5f9; }
+::-webkit-scrollbar-thumb { background: #2563eb; border-radius: 3px; }
+
+/* Stat counter */
+.stat-number { font-variant-numeric: tabular-nums; }
